@@ -97,9 +97,8 @@ The coefficient "estimate" (slope) is -5.3445 for summary(fit).It is -534.447 fo
 ####9.Question 9 :Refer back to the mtcars data set with mpg as an outcome and weight (wt) as the predictor. About what is the ratio of the the sum of the squared errors, ∑ni=1(Yi−Y^i)2 when comparing a model with just an intercept (denominator) to the model with the intercept and slope (numerator)?
 
 
+#####Ans : 
+#### DONT KNOW THIS QUESTION MEANS
 
-#####Ans :
-
-
-
-
+####10.Question 10 : Do the residuals always have to sum to 0 in linear regression?
+#####Ans :  If an intercept is included, then they will sum to 0.
