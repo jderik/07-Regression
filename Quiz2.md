@@ -98,7 +98,7 @@ The coefficient "estimate" (slope) is -5.3445 for summary(fit).It is -534.447 fo
 
 
 #####Ans : 
-#### DONT KNOW THIS QUESTION MEANS
+#### DONT KNOW WHAT THIS QUESTION MEANS
 
 ####10.Question 10 : Do the residuals always have to sum to 0 in linear regression?
 #####Ans :  If an intercept is included, then they will sum to 0.
