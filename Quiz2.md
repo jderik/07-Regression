@@ -33,6 +33,21 @@ predict(fit,data.frame(x=mean(x)), interval="confidence")
 
 #####Ans :# lwr: 18.99098
 
+####4.Question 4 : Refer to the previous question. Read the help file for mtcars. What is the weight coefficient interpreted as?
+
+#####Ans : The estimated expected change in mpg per 1,000 lb increase in weight.
+
+####5.Question 5 : Consider again the mtcars data set and a linear regression model with mpg as predicted by weight (1,000 lbs). A new car is coming weighing 3000 pounds. Construct a 95% prediction interval for its mpg. What is the upper endpoint?
+
+data(mtcars)
+
+predict(fit, data.frame(x=mean(3)), interval="prediction")
+
+# upr: 27.57355
+
+
+#####Ans : 
+
 
 
 
