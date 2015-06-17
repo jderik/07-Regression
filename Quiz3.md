@@ -81,7 +81,36 @@ x <- c(0.586, 0.166, -0.042, -0.614, 11.72)
 y <- c(0.549, -0.026, -0.127, -0.751, 1.344)
 Give the slope dfbeta for the point with the highest hat value.
 
+fit6 <- lm(y ~ x)
+dfbetas(fit6)
 
-#####Ans : 
+          (Intercept)             x
+        1  1.06212391   -0.37811633
+        2  0.06748037   -0.02861769
+        3 -0.01735756    0.00791512
+        4 -1.24958248    0.67253246
+        5  0.20432010 -133.82261293
+
+#####Ans : As per Q5, 5th point had highest HAT value. So answer is -133.82261293
+
+####Q07 : Consider a regression relationship between Y and X with and without adjustment for a third variable Z. Which of the following is true about comparing the regression coefficient between Y and X with and without adjustment for Z.
+
+1. For the the coefficient to change sign, there must be a significant interaction term.
+2. The coefficient can't change sign after adjustment, except for slight numerical pathological cases.
+3. Adjusting for another variable can only attenuate the coefficient toward zero. It can't materially change sign.
+4. It is possible for the coefficient to reverse sign after adjustment. For example, it can be strongly significant and positive before adjustment and strongly significant and negative after adjustment.
+
+
+#####Ans : 4
+
+
+
+
+
+
+
+
+
+
 
 
