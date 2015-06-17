@@ -46,11 +46,16 @@ checker$Pr
 lm(mpg ~ I(wt * 0.5) + factor(cyl), data = mtcars)
 How is the wt coefficient interpretted?
 
+fit4<-lm(mpg ~ I(wt * 0.5) + factor(cyl), data = mtcars)
+summary(fit4)
+
+#####Ans : The estimated expected change in MPG per one ton increase in weight for a specific number of cylinders (4, 6, 8).
+
+####Q05 : Consider the following data set
+
+x <- c(0.586, 0.166, -0.042, -0.614, 11.72)
+y <- c(0.549, -0.026, -0.127, -0.751, 1.344)
+Give the hat diagonal for the most influential point
 
 
-#####Ans :
-
-
-
-
-
+#####Ans : 
