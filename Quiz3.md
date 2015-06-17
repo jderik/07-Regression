@@ -52,10 +52,36 @@ summary(fit4)
 #####Ans : The estimated expected change in MPG per one ton increase in weight for a specific number of cylinders (4, 6, 8).
 
 ####Q05 : Consider the following data set
-
 x <- c(0.586, 0.166, -0.042, -0.614, 11.72)
 y <- c(0.549, -0.026, -0.127, -0.751, 1.344)
 Give the hat diagonal for the most influential point
 
+fit5 <- lm(y ~ x)
+
+*Two alternatives
+###### 1
+hatvalues(fit5)  #
+
+            1         2         3         4         5 
+        0.2286650 0.2438146 0.2525027 0.2804443 0.9945734 
+
+# ITEM 5 -> 0.9945734
+
+###### 2
+
+lm.influence(fit5)
+
+# ITEM hat[5]5 -> 0.9945734
+
+#####Ans : 0.9945734 
+
+
+####Q06 : Consider the following data set
+x <- c(0.586, 0.166, -0.042, -0.614, 11.72)
+y <- c(0.549, -0.026, -0.127, -0.751, 1.344)
+Give the slope dfbeta for the point with the highest hat value.
+
 
 #####Ans : 
+
+
