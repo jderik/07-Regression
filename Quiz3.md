@@ -31,15 +31,24 @@ summary(fit_noweight)$coef
 
 ####Q03 : Consider the mtcars data set. Fit a model with mpg as the outcome that considers number of cylinders as a factor variable and weight as confounder. Now fit a second model with mpg as the outcome model that considers the interaction between number of cylinders (as a factor variable) and weight. Give the P-value for the likelihood ratio test comparing the two models and suggest a model using 0.05 as a type I error rate significance benchmark.
 
+fit1 <- lm(mpg ~ factor(cyl) + wt, data = mtcars)
+fit2 <- lm(mpg ~ factor(cyl) + wt + interaction(cyl, wt), data = mtcars)
+
+# Use ANOVA ; A NULL Hypothesis indicates both models are the same.
+checker <- anova(fit1, fit2)
+checker$Pr
+
+# NA 0.08358536
+
+#####Ans : The P-value is larger than 0.05. So, according to our criterion, we would fail to reject, which suggests that the interaction terms may not be necessary.
+
+####Q04 : Consider the mtcars data set. Fit a model with mpg as the outcome that includes number of cylinders as a factor variable and weight inlcuded in the model as
+lm(mpg ~ I(wt * 0.5) + factor(cyl), data = mtcars)
+How is the wt coefficient interpretted?
 
 
 
-#####Ans : 
-
-
-
-
-
+#####Ans :
 
 
 
