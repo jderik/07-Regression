@@ -21,6 +21,7 @@ summary(fit_withweight)$coef
 
 fit_noweight <- lm(mpg ~ factor(cyl), mtcars)
 summary(fit_noweight)$coef
+
                              Estimate Std. Error   t value     Pr(>|t|)
               (Intercept)   26.663636  0.9718008 27.437347 2.688358e-22
               factor(cyl)6  -6.920779  1.5583482 -4.441099 1.194696e-04
@@ -28,12 +29,12 @@ summary(fit_noweight)$coef
 
 #####Ans : Holding weight constant, cylinder appears to have less of an impact on mpg than if weight is disregarded.
 
+####Q03 : Consider the mtcars data set. Fit a model with mpg as the outcome that considers number of cylinders as a factor variable and weight as confounder. Now fit a second model with mpg as the outcome model that considers the interaction between number of cylinders (as a factor variable) and weight. Give the P-value for the likelihood ratio test comparing the two models and suggest a model using 0.05 as a type I error rate significance benchmark.
 
 
 
 
-
-
+#####Ans : 
 
 
 
