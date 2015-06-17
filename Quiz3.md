@@ -34,11 +34,11 @@ summary(fit_noweight)$coef
 fit1 <- lm(mpg ~ factor(cyl) + wt, data = mtcars)
 fit2 <- lm(mpg ~ factor(cyl) + wt + interaction(cyl, wt), data = mtcars)
 
-# Use ANOVA ; A NULL Hypothesis indicates both models are the same.
+###### Use ANOVA ; A NULL Hypothesis indicates both models are the same.
 checker <- anova(fit1, fit2)
 checker$Pr
 
-# NA 0.08358536
+###### NA 0.08358536
 
 #####Ans : The P-value is larger than 0.05. So, according to our criterion, we would fail to reject, which suggests that the interaction terms may not be necessary.
 
@@ -65,13 +65,13 @@ hatvalues(fit5)  #
             1         2         3         4         5 
         0.2286650 0.2438146 0.2525027 0.2804443 0.9945734 
 
-# ITEM 5 -> 0.9945734
+###### ITEM 5 -> 0.9945734
 
 ###### 2
 
 lm.influence(fit5)
 
-# ITEM hat[5]5 -> 0.9945734
+####### ITEM hat[5]5 -> 0.9945734
 
 #####Ans : 0.9945734 
 
