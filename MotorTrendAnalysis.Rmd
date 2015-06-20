@@ -1,0 +1,105 @@
+---
+title: "Transmission type and its effect on MPG"
+author: "JD"
+date: "Saturday, June 20, 2015"
+output: pdf_document
+---
+#### Executive Summary
+Motor Trend publishes data from the Automotive Industry. In this report it is strived to provide an analysis on the relationship between a set of variables and miles per gallon (MPG) (outcome). In particular concern is to check if an automatic or manual transmission better for MPG and quantify the MPG difference between automatic and manual transmissions.
+
+```{r global_options , echo=FALSE, fig.align='left'}
+library(ggplot2)
+```
+
+#### Report
+
+Load the data and initial opertations
+```{r, echo=TRUE}
+data(mtcars)
+mtcars$am <- factor(mtcars$am)
+mtcars$carb <- factor(mtcars$carb)
+mtcars$cyl <- factor(mtcars$cyl)
+mtcars$gear <- factor(mtcars$gear)
+mtcars$vs <- factor(mtcars$vs)
+```
+
+```{r, echo=TRUE, results='hide'}
+
+summary(mtcars)
+length(mtcars[,1])
+
+```
+
+This is a data of 32 vehicles with 11 observations.
+
+Relation of MPG with other 10 variables as predictors
+
+```{r, echo=TRUE, results='hide'}
+anal_01<-lm(mpg~.,data=mtcars)
+summary(anal_01)
+
+```
+
+The p-value is not significant as they are mostly above 0.05
+The adjsuted R-Squared sits at 0.8066. This means that we can explain 80% of variance.
+
+Comparing MPG as outcome with transimission, AM, as predictor.
+
+```{r, echo=TRUE, results='hide'}
+anal_02<-lm(mpg~am,data=mtcars)
+summary(anal_02)
+
+```
+
+We have a Adjusted R-squared:  0.3385; Residual standard error: 4.902 on 30 degrees of freedom
+
+With all the other variables the details are as below
+* CYL   : Adjusted R-squared:  0.7171; Residual standard error: 3.206 on 30 degrees of freedom
+* DISP  : Adjusted R-squared:  0.709 ; Residual standard error: 3.251 on 30 degrees of freedom
+* HP    : Adjusted R-squared:  0.5892; Residual standard error: 3.863 on 30 degrees of freedom
+* DRAT  : Adjusted R-squared:  0.4461; Residual standard error: 4.485 on 30 degrees of freedom
+* WT    : Adjusted R-squared:  0.7446; Residual standard error: 3.046 on 30 degrees of freedom
+* QSEC  : Adjusted R-squared:  0.1478; Residual standard error: 5.564 on 30 degrees of freedom
+* VS    : Adjusted R-squared:  0.4223; Residual standard error: 4.581 on 30 degrees of freedom
+* GEAR  : Adjusted R-squared:  0.205 ; Residual standard error: 5.374 on 30 degrees of freedom
+* CARB  : Adjusted R-squared:  0.2803; Residual standard error: 5.113 on 30 degrees of freedom
+
+##### The variables are highly corelated so its difficult to identify the exact model that helps us. Lets use the following combinations for now.
+
+1. we include weight as a predictor along with transimission type
+2. We use weight, cylinder and transmission type as predictor.
+
+By common logic these parameters have the greatest bearing on MPG.
+
+
+```{r, echo=TRUE,results='hide'}
+anal_03<-lm(mpg~am+wt, data=mtcars)
+anal_04<-lm(mpg~am+wt+cyl, data=mtcars)
+
+```
+
+A summary of the coefficients 
+
+```{r, echo=TRUE, results='hide'}
+
+summary(anal_02)$coef
+summary(anal_03)$coef
+summary(anal_04)$coef
+```
+
+Using anova we compute the analysis of variance for the models.
+
+```{r, echo=TRUE}
+anova(anal_02,anal_03,anal_04)
+```
+
+The inclusion of additional parameters does result in a variation on impact to the usage per gallon. 
+
+####Conclusion
+While the fuel usages in manual and autmoatic transimission types are different, the impact of transmission alone on usage of fuel cannot be completely determined. This may be due to the dependencies on other parameters such as weight and cylinders.
+
+
+```{r, echo=TRUE}
+
+
+```
